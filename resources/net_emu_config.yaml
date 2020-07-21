@@ -1,0 +1,23 @@
+nemu_config:       # Config common to all agents
+  mnscripts_vol: /home/mep53/workspace/mininet/mperhez/mnscripts
+  sdnc:
+    sdnc_img: mperhez/ryu-sdn-controller:latest
+    sdnc_label: ryu-sdn
+    sdnc_command: ''
+    sdnc_mem_limit: 500m
+    sdnc_mem_res: 450m
+    sdnc_env: {}
+    sdnc_port: '8080'
+    sdnc_ports: {'8080': '8080'}
+    sdnc_vols: {/home/mep53/workspace/mininet/mperhez/mnscripts: {bind: /mnscripts,
+        mode: rw}}
+  mnet:
+    mnet_img: mperhez/mininet:latest
+    mnet_label: mnet
+    mnet_command: ''
+    mnet_mem_limit: 500m
+    mnet_mem_res: 450m
+    mnet_env: = {}
+    mnet_port: '9081'
+    mnet_ports: {'9081': '9081'}
+    mnet_script: py-mininet.py        # Relative to mnscripts_vol. Script to create mnet network

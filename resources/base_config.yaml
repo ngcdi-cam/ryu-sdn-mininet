@@ -1,0 +1,31 @@
+file_system:       # File System Config
+  base_dir: /home/mep53/workspace/scala/ngcdi/mperhez/        # Base directory
+dates:
+  date_format: '%Y-%m-%dT%H:%M:%S.%fZ'   # RFC3339 format used by influxdb
+containers:     #Common to all containers
+  ntw_name: mininet_default      # Network Name
+  userid: 1003  #dial server 1016
+  groupid: 1004 # dial server 1018
+infr_labels:
+    - net_emu
+    - prom
+    - grafana
+    - ifxdb
+    - cadvisor
+    - sdnc
+run:    #Default run settings
+  run_base_label: datest1
+  q_runs: 1     # Quantity of runs
+  duration: 30    # Duration in seconds
+  infr_q:
+  - 0   #net_emu
+  - 1  #prom
+  - 0  #grafana
+  - 1  #ifxdb
+  - 0 #cadvisor
+  - 0   #sdnc
+
+
+
+  
+
